@@ -1,0 +1,194 @@
+<section id="main_content" class="inner">
+  <style>
+    .tutorial-image {
+      margin: 10px 10%;
+      width: 80%;
+    }
+  </style>
+
+  <h2>
+    <a id="A Worked Example" class="anchor"
+       href="#A_Worked_Example" aria-hidden="true">
+      <span class="octicon octicon-link"></span>
+    </a>
+    A Worked Example
+  </h2>
+
+  <p>
+    Let's write a small exploration to help the learner understand the concept
+    of 'slope of a line'.
+  </p>
+
+  <p>
+    We'll create a total of 3 cards for the learner to go through linearly.
+    They'll start at the First Card, answer a question to go to the Second
+    Card, and then answer another question to go to the Third Card. Along the
+    way, we'll add a few responses.
+  </p>
+
+  <h4>First Card</h4>
+  <p>
+    To start, let's write our introduction and ask the learner a question.
+  </p>
+  <p>
+    Click on the Content box under "First Card" that you saw when the Exploration
+    Editor first opened, and type in the following:
+  </p>
+  <img src="static/images/tutorial/card1InitialContent.png" class="tutorial-image">
+
+  <p>
+    After saving the content, you'll be able to add an interaction. Let's
+    add a number input interaction so the learner can type their answer
+    to our question.
+  </p>
+  <p>
+    Click on <strong>Add Interaction</strong>.
+  </p>
+  <img src="static/images/tutorial/card1AddInteraction.png" class="tutorial-image">
+
+  <p>
+    You'll see the following interaction selector. Go ahead and click on
+    <strong>Number Input</strong>.
+  </p>
+  <img src="static/images/tutorial/card1NumberInput.png" class="tutorial-image">
+
+  <p>
+    Click on <strong>Save Interaction</strong>. The green box represents what
+    the learner will see. They will be able to type their answer here.
+  </p>
+  <img src="static/images/tutorial/card1AfterNumberInput.png" class="tutorial-image">
+
+  <p>
+    Notice that you can now add responses. We can choose what happens if the
+    learner types in "2", "3", or any other number. To keep it simple, let's
+    just take the learner to the next card regardless of what they typed.
+  </p>
+
+  <p>
+    Click on the box with the text "[All answers] -> (try again)". This box
+    represents the <em>default</em> response Oppia gives if it does not know
+    how to handle the answer. Once clicked, you should see something like
+    this (but filled in for the purposes of the exploration we are making):
+  </p>
+  <img src="static/images/tutorial/card1Response.png" class="tutorial-image">
+
+  <p>
+    Now this is important: the Destination section is where you will take
+    the learner next. By default, it loops back to the current card,
+    which means the learner will be re-asked to type in an answer to the
+    same question (but, because it's still the same question, they won't be
+    presented with the content again). However, let's set the Destination
+    to a new card instead and call it "Method 2". Afterwards, save both the
+    feedback and destination for this card. You should now see:
+  </p>
+  <img src="static/images/tutorial/card1End.png" class="tutorial-image">
+
+  <p>
+    We're done with this card. The learner will proceed to the card
+    "Method 2", so let's go there and explain the second method. We can do
+    that by clicking on "Method 2" in the Destination link or in the
+    Exploration Overview window. Once you do that, you'll be taken to the
+    "Method 2" card.
+  </p>
+
+  <h4>Second Card</h4>
+  <p>
+    Now we're in the second card, "Method 2". This looks just like what you
+    started the exploration with, except that the title is different and
+    the Exploration Overview shows two cards.
+  </p>
+  <p>Add the following text:</p>
+  <img src="static/images/tutorial/card2Content.png" class="tutorial-image">
+
+  <p>
+    Add a <b>Number Input</b> Interaction just like in the First Card.
+  </p>
+  <p>
+    This time, let's have two responses for the interaction, one if the learner
+    types in an incorrect answer, and one if the answer is correct. Click on
+    the default response like you did for the last card and make sure it
+    looks like the following:
+  </p>
+  <img src="static/images/tutorial/card2Response1.png" class="tutorial-image">
+
+  <p>
+    Notice that we didn't change the Destination. This means that, if the
+    learner input falls into this category, the learner will see the
+    feedback and will be asked again to type in a number.
+  </p>
+  <p>
+    We'd also like to catch the case where the learner's answer is correct.
+    Click <strong>+ Add New Oppia Response</strong> this time. Change the rule
+    to "Answer is equal to". Type '1', then add the following feedback and
+    create a new Destination called "Last Card". It should look like this:
+  </p>
+  <img src="static/images/tutorial/card2Response2.png" class="tutorial-image">
+
+  <p>
+    After clicking <strong>Save Response</strong>, we'll be done with this
+    card, so let's move to the "Last Card" and conclude the exploration.
+    (Alternatively, as an exercise, you could have a go at explaining the
+    third slope method).
+  </p>
+
+  <h4>Third Card</h4>
+  <p>
+    Once you're in "Last Card", add the following content, and then add
+    the "End Conversation" interaction:
+  </p>
+  <img src="static/images/tutorial/card3End.png" class="tutorial-image">
+
+  <p>
+    And, <em>voilà</em> -- you've created your first exploration! Save the
+    draft, and then give yourself a pat on the back. You can always go back
+    later and add new cards or refine the current ones.
+  </p>
+
+  <h3>Improving the Sample Exploration</h3>
+  <p>
+    After you've gotten some learners to play through your exploration, you
+    can revisit it, look at the answers submitted, and improve the
+    exploration based on that.
+  </p>
+  <p>
+    For example, suppose you find that many learners give the answer 2 when
+    faced with the second question. On asking some of them, you discover
+    that they're computing (2 + 2)/(1 + 1). You can create an additional
+    response that reminds them of the slope equation and that helps them
+    identify the various terms in it.
+  </p>
+  <p>
+    In general, you can always go back and add new cards, refine the
+    current ones, or check out answers that learners have submitted, so
+    that you can improve the exploration further.
+  </p>
+
+  <h4>Example: Adding a response to our Sample Exploration</h4>
+  <p>
+    Let's say you've created the sample exploration above, and you know that
+    learners are playing through it. To see the data captured by the
+    exploration, let's go to the second card (Method 2) and see what answers
+    learners have been trying. Here's an example of what this may look like:
+  </p>
+  <img src="static/images/tutorial/unhandledAnswers.png" class="tutorial-image">
+
+  <p>
+    In general, these <strong>Unhandled Answers</strong> are located at the
+    bottom of each card and they can help you understand where students
+    are messing up. For instance, suppose you notice that for the second
+    question (asking learners to compute the slope between (1, 1) and (2, 2)),
+    you're getting a response of -1. This could indicate that students are
+    being inconsistent with the slope equation and incorrectly computing
+    (y2-y1)/(x1-x2), which would give them -1.
+  </p>
+
+  <P>
+    Let's make a response to address this. When you finish saving the
+    response, it should look like this:
+  </p>
+  <img src="static/images/tutorial/updateExplorationNewResponse.png" class="tutorial-image">
+
+  <p>
+    And that's it. Congratulations, you've just updated your first exploration!
+  </p>
+</section>

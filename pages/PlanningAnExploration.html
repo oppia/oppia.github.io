@@ -1,0 +1,123 @@
+<section id="main_content" class="inner">
+  <h2>
+    <a id="Planning_Your_Exploration" class="anchor" href="#Planning_Your_Exploration"
+       aria-hidden="true">
+      <span class="octicon octicon-link"></span>
+    </a>
+    Planning an Exploration
+  </h2>
+
+  <p>
+    A great way to think of an exploration is as a conversation with the
+    learner. You might start by introducing the topic you want to
+    explain/explore, then try and get the learner to engage with it. Along the
+    way, you can ask questions to help the learner check their understanding,
+    and provide them with appropriate feedback so that they don't get
+    frustrated.
+  </p>
+
+  <p>
+    So, what should an exploration be about? Typically, it will revolve around
+    a question -- usually, the more specific, the better. For example:
+  </p>
+  <ul>
+    <li>What is the slope of a line?</li>
+    <li>What are the nutritional benefits of a banana?</li>
+    <li>What is the difference between Python and C#?</li>
+  </ul>
+
+  <p>
+    <strong>Note:</strong> The exploration doesn't need to cover all aspects of
+    what you're trying to teach. In fact, it's usually better and easier to
+    make something basic (and non-branching) first, and then expand on it once
+    learners start using the exploration. You'll be able to see the answers
+    that learners are giving, and use these to add more detail as needed.
+  </p>
+
+  <p>
+    Also, Oppia can respond dynamically to learner's answers, so you'll need to
+    tell it how to handle different answers for each 'card'. When planning your
+    exploration, it's good to control the complexity of this branching so
+    that it isn't overwhelming. Thus, similar to the above, we recommend
+    starting with something linear, in order to reach a 'complete' exploration
+    as soon as possible. Later, you can add more branching and loops as needed.
+  </p>
+
+  <p>
+    You might also like to check out our compilation of
+    <a href="#DesignTips">Design Tips</a>.
+  </p>
+
+
+  <h2>
+    <a id="The_Structure_of_an_Exploration" class="anchor" href="#The_Structure_of_an_Exploration"
+       aria-hidden="true">
+      <span class="octicon octicon-link"></span>
+    </a>
+    The Structure of an Exploration
+  </h2>
+
+  <p>
+    Oppia models a teacher-student conversation by breaking it down into
+    <i>cards</i>. Based on the learner's answer, Oppia may move to a new card
+    or stay on the same one.
+  </p>
+
+  <p>
+    For example, the initial card of an exploration may ask: "Can you figure
+    out the value of 2 + 2?" Based on the learner's answer, Oppia may do
+    different things:
+  </p>
+
+  <ul>
+    <li>
+      If the learner answers "4", Oppia moves to another card, which says
+      "Correct!".
+    </li>
+  </ul>
+  <ul>
+    <li>
+      If the learner answers "-4", Oppia stays on the same card and replies:
+      "You're adding two positive numbers. Surely the answer should be positive?"
+    </li>
+  </ul>
+  <ul>
+    <li>
+      If the learner answers "Yes", Oppia stays on the same card and replies:
+      "I don't understand your answer; could you please enter a number?"
+      (The exploration creator might then notice this and
+      <a href="#ImprovingAnExploration">rewrite the question to be clearer</a>.)
+    </li>
+  </ul>
+
+  <p>
+    Note that subsequent cards will also say something, and expect an answer
+    from the learner. This is similar to a teacher asking a question of a
+    student, and waiting for the answer.
+  </p>
+
+  <h2>
+    <a id="Crafting_Responses" class="anchor" href="#Crafting_Responses"
+       aria-hidden="true">
+      <span class="octicon octicon-link"></span>
+    </a>
+    Crafting Responses
+  </h2>
+  <p>
+    When writing an exploration, most of the work involves answering the
+    following question (for different possibilities of X and Y):
+  </p>
+  <blockquote>
+    <i>
+      If the person I'm talking to says X in response to my question Y, what
+      should I say?
+    </i>
+  </blockquote>
+
+  <p>
+    That is, pretend you're having a 1-on-1 conversation with the learner. If
+    the learner gives you a particular answer, how would you respond in a way
+    that's most helpful for them? Use that as the basis for the feedback that
+    Oppia should give.
+  </p>
+</section>
