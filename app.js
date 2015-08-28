@@ -13,73 +13,73 @@
 // limitations under the License.
 
 var oppiaGithubPages = angular.module('oppiaGithubPages', ['ngRoute']);
-// configure our routes
+
 oppiaGithubPages.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'pages/home.html',
       controller: 'mainController',
-      projectTag: 'A tool for creating interactive tutors'
+      projectTag: 'User Documentation'
     })
-    .when('/Embedded', {
-      templateUrl: 'pages/embedded.html',
-      projectTag: 'Embedding Your Exploration'
-    })
-    .when('/Customized', {
-      templateUrl: 'pages/customized.html',
-      projectTag: 'Customizing States'
-    })
-    .when('/Improve', {
-      templateUrl: 'pages/improve.html',
-      projectTag: 'Improve The Exploration'
+    .when('/Screenshots', {
+      templateUrl: 'pages/Screenshots.html',
+      projectTag: 'Screenshots'
     })
     .when('/WhatIsOppia', {
-      templateUrl: 'pages/whatIsOppia.html',
+      templateUrl: 'pages/WhatIsOppia.html',
       projectTag: 'What is Oppia?'
     })
     .when('/KeyConceptsInOppia', {
-      templateUrl: 'pages/keyConcepts.html',
+      templateUrl: 'pages/KeyConceptsInOppia.html',
       projectTag: 'Key concepts in Oppia'
     })
     .when('/TheExplorationGallery', {
-      templateUrl: 'pages/theExplorationGallery.html',
+      templateUrl: 'pages/TheExplorationGallery.html',
       projectTag: 'The Exploration Gallery'
     })
-    .when('/LearnerView', {
-      templateUrl: 'pages/learnerView.html',
-      projectTag: 'The Exploration Gallery'
+    .when('/TheLearnerView', {
+      templateUrl: 'pages/TheLearnerView.html',
+      projectTag: 'The Learner View'
     })
-    .when('/PlanningYourExploration', {
-      templateUrl: 'pages/planningYourExploration.html',
-      projectTag: 'Planning Your Exploration'
+    .when('/CreatingAnExploration', {
+      templateUrl: 'pages/CreatingAnExploration.html',
+      projectTag: 'Creating an Exploration'
     })
-    .when('/DesignTips', {
-      templateUrl: 'pages/designTips.html',
-      projectTag: 'Exploration design tips'
+    .when('/PlanningAnExploration', {
+      templateUrl: 'pages/PlanningAnExploration.html',
+      projectTag: 'Planning an Exploration'
     })
-    .when('/NoninteractiveContent', {
-      templateUrl: 'pages/noninteractiveContent.html',
-      projectTag: 'Non-interactive content in Oppia'
+    .when('/TheExplorationEditor', {
+      templateUrl: 'pages/TheExplorationEditor.html',
+      projectTag: 'The Exploration Editor'
     })
-    .when('/InteractiveWidgets', {
-      templateUrl: 'pages/interactiveWidgets.html',
-      projectTag: 'Overview of interactions'
+    .when('/AWorkedExample', {
+      templateUrl: 'pages/AWorkedExample.html',
+      projectTag: 'A Worked Example'
     })
-    .when('/Rules', {
-      templateUrl: 'pages/rules.html',
-      projectTag: 'Rules'
+    .when('/PublishingAnExploration', {
+      templateUrl: 'pages/PublishingAnExploration.html',
+      projectTag: 'Publishing an Exploration'
+    })
+    .when('/ImprovingAnExploration', {
+      templateUrl: 'pages/ImprovingAnExploration.html',
+      projectTag: 'Improving an Exploration'
+    })
+    .when('/DownloadingAnExploration', {
+      templateUrl: 'pages/DownloadingAnExploration.html',
+      projectTag: 'Downloading an exploration'
     })
     .when('/Parameters', {
-      templateUrl: 'pages/parameters.html',
-      projectTag: 'Customizing Explorations with Parameters'
+      templateUrl: 'pages/Parameters.html',
+      projectTag: 'Parameters'
     })
-    .when('/AuditAndPublishYourExploration', {
-      templateUrl: 'pages/auditAndPublishYourExploration.html',
-      projectTag: 'Publishing your exploration'
+    .when('/DesignTips', {
+      templateUrl: 'pages/DesignTips.html',
+      projectTag: 'Exploration Design Tips'
     })
-    .when('/ExportingYourExploration', {
-      templateUrl: 'pages/exportingYourExploration.html',
-      projectTag: 'Exporting your exploration to a zip file'
+    .when('/EmbeddingAnExploration', {
+      templateUrl: 'pages/EmbeddingAnExploration.html',
+      projectTag: 'Embedding an Exploration'
     })
     .otherwise({
       redirectTo: '/'
@@ -89,11 +89,6 @@ oppiaGithubPages.config(['$routeProvider', function($routeProvider) {
 oppiaGithubPages.run(['$location', '$rootScope', function($location, $rootScope) {
   $rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
     $rootScope.projectTag = current.$$route.projectTag;
-    $rootScope.title = 'OppiaGithub-' + current.$$route.projectTag;
+    $rootScope.title = 'Oppia: ' + current.$$route.projectTag;
   });
 }]);
-
-// TODO:(create separate files for controllers)
-oppiaGithubPages.controller('mainController', function($scope) {
-
-});
