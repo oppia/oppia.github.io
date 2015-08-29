@@ -5,7 +5,8 @@
   margin: 0 auto;
 }
 
-#sidebar a:hover {
+#sidebar a:hover,
+#sidebar a:focus{
   text-decoration: none
 }
 
@@ -19,16 +20,18 @@
   padding: 0
 }
 
-#sidebar>.primary .selected a:link,
-#sidebar>.primary .selected a:visited {
-  font-weight: 600;
-  color: #222222;
-}
-
 #sidebar>.primary>li {
   margin: 11px 0 0px 0
 }
 
 #sidebar>.primary>li>a {
   height: 16px
+}
+
+.active {
+  font-weight: 600;
+  color: #222222;
+  /* Disables the link completely instead of just cursor: default; */
+  pointer-events: none;
+  text-decoration: none;
 }
