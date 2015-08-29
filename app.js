@@ -14,7 +14,7 @@
 
 var oppiaGithubPages = angular.module('oppiaGithubPages', ['ngRoute']);
 
-oppiaGithubPages.config(['$routeProvider','$locationProvider', function($routeProvider,$locationProvider) {
+oppiaGithubPages.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'pages/home.html',
