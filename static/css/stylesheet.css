@@ -465,7 +465,7 @@ Full-Width Styles
   width: 1024px;
   margin: 0 auto;
   boxing-size: border-box;
-  /*for page with few content sidebar touches footer
+  /*For page with few content sidebar touches footer
   Use padding instead to fix*/
   padding-bottom: 20px;
 }
@@ -538,7 +538,7 @@ Small Device Styles
   img {
     width: 640px;
   }
-  .container{
-    width:990px;
+  .container {
+    width: 990px;
   }
 }
