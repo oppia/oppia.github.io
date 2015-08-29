@@ -1,12 +1,12 @@
 #sidebar {
   float: left;
-  padding-top: 40px;
   min-width: 180px;
   margin: 0 auto;
+  padding-top: 40px;
 }
 
 #sidebar a:hover,
-#sidebar a:focus{
+#sidebar a:focus {
   text-decoration: none
 }
 
@@ -29,9 +29,9 @@
 }
 
 .active {
-  font-weight: 600;
   color: #222222;
   /* Disables the link completely instead of just cursor: default; */
+  font-weight: 600;
   pointer-events: none;
   text-decoration: none;
 }

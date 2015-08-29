@@ -83,7 +83,7 @@ oppiaGithubPages.config(['$routeProvider','$locationProvider', function($routePr
     .otherwise({
       redirectTo: '/'
     });
-     //Use the HTML5 History API to prettfy URL(by removing #)
+     //Use the HTML5 History API to prettify URL (by removing #).
      $locationProvider.html5Mode(true);
 }]);
 
@@ -94,5 +94,5 @@ oppiaGithubPages.run(['$location', '$rootScope', function($location, $rootScope)
   });
   $rootScope.isActive = function(route) {
     return route === $location.path();
-  }
+  };
 }]);
