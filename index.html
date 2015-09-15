@@ -33,19 +33,19 @@
     <div id="main_content_wrap" class="outer">
       <div>
       <!--A container to make a grid with a fixed column-->
-        <div class="container row" style="width: 900px;">
-          <div ng-include="'pages/sidebar.html'"></div>
+        <div class="container row">
           <!-- Content will be injected here. -->
           <div class="view-content" ng-view autoscroll="true"></div>
         </div>
       </div>
     </div>
 
-    <div id="footer_wrap" class="outer">
+    <div id="page_sidebar" ng-include="'pages/sidebar.html'"></div>
+
+
+
+    <div id="footer_wrap">
       <footer class="inner" style="max-width: 900px; width: 900px;">
-        <p style="font-size: smaller;">
-          Published with <a href="https://pages.github.com">GitHub Pages</a>
-        </p>
       </footer>
     </div>
 
