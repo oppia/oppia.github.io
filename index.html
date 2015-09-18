@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html ng-app="oppiaGithubPages">
 
-<head>
-  <meta charset="utf-8">
-  <base href="/">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Oppia : A tool for creating interactive tutors">
-  <link rel="stylesheet" type="text/css" media="screen" href="static/css/stylesheet.css">
-  <link rel="shortcut icon" type="image/png" href="static/images/favicon.png" />
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
-  <script src="app.js"></script>
-  <title ng-bind="$root.title"></title>
-</head>
+  <head>
+    <meta charset="utf-8">
+    <base href="/">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Oppia : A tool for creating interactive tutors">
+    <link rel="stylesheet" type="text/css" media="screen" href="static/css/stylesheet.css">
+    <link rel="shortcut icon" type="image/png" href="static/images/favicon.png" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="app.js"></script>
+    <title ng-bind="$root.title"></title>
+  </head>
 
-<body>
-  <div class="outer">
-    <section id="header_wrap">
-      <header class="inner">
-        <a id="forkme_banner" href="https://github.com/oppia/oppia">View on GitHub</a>
-        <h1 id="project_title"><a href="https://www.oppia.org" class="anchor">Oppia</a></h1>
-        <h2 id="project_tagline" ng-bind="$root.projectTag"></h2>
-      </header>
-    </section>
-    <section id="main_content_wrap">
-      <!--A container to make a grid with a fixed column-->
-      <main class="row main_content">
-        <div class="column sidebar_wrapper" ng-controller="sidebarCtrl">
-          <div ng-include="'pages/sidebar.html'"></div>
-        </div>
-        <!-- Content will be injected here. -->
-        <div class="column view-content" ng-view autoscroll="true"></div>
-      </main>
-    </section>
-  </div>
-  <script src="static/javascripts/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer"></script>
-  <script src="https://ssl.google-analytics.com/ga.js" type="text/javascript" async>
-  </script>
-  <script type="text/javascript">
-  try {
-    var pageTracker = _gat._getTracker("UA-66335041-1");
-    pageTracker._trackPageview();
-  } catch (err) {}
-  </script>
-</body>
+  <body>
+    <div class="outer">
+      <section id="header_wrap">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/oppia/oppia">View on GitHub</a>
+          <h1 id="project_title"><a href="https://www.oppia.org" class="anchor">Oppia</a></h1>
+          <h2 id="project_tagline" ng-bind="$root.projectTag"></h2>
+        </header>
+      </section>
+      <section id="main_content_wrap">
+        <!--A container to make a grid with a fixed column-->
+        <main class="row main_content">
+          <div class="column sidebar_wrapper" ng-controller="sidebarCtrl">
+            <div ng-include="'pages/sidebar.html'"></div>
+          </div>
+          <!-- Content will be injected here. -->
+          <div class="column view-content" ng-view autoscroll="true"></div>
+        </main>
+      </section>
+    </div>
+    <script src="static/javascripts/run_prettify.js?autoload=true&amp;skin=sunburst&amp;lang=css" defer="defer"></script>
+    <script src="https://ssl.google-analytics.com/ga.js" type="text/javascript" async>
+    </script>
+    <script type="text/javascript">
+    try {
+      var pageTracker = _gat._getTracker("UA-66335041-1");
+      pageTracker._trackPageview();
+    } catch (err) {}
+    </script>
+  </body>
 
 </html>
