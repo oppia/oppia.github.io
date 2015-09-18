@@ -1,8 +1,14 @@
+.active {
+  color: #222222;
+  /* Disables the link completely instead of just cursor: default; */
+  font-weight: 600;
+  pointer-events: none;
+  text-decoration: none;
+}
+
 #sidebar {
-  float: left;
-  min-width: 180px;
-  margin: 0 auto;
   padding-top: 40px;
+  max-width: 240;
 }
 
 #sidebar a:hover,
@@ -28,10 +34,9 @@
   height: 16px
 }
 
-.active {
-  color: #222222;
-  /* Disables the link completely instead of just cursor: default; */
-  font-weight: 600;
-  pointer-events: none;
-  text-decoration: none;
+.sidebar_fixed {
+  margin: 0;
+  padding-top: 0 !important;
+  position: fixed;
+  top: 0;
 }

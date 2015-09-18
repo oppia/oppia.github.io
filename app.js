@@ -83,9 +83,21 @@ oppiaGithubPages.config(['$routeProvider', '$locationProvider', function($routeP
     .otherwise({
       redirectTo: '/'
     });
-     //Use the HTML5 History API to prettify URL (by removing #).
-     $locationProvider.html5Mode(true);
+  //Use the HTML5 History API to prettify URL (by removing #).
+  $locationProvider.html5Mode(true);
 }]);
+
+oppiaGithubPages.controller('sidebarCtrl', function($window, $scope) {
+  $scope.scrollPosition = 0;
+
+  $window.onscroll = function() {
+    $scope.scrollPosition = document.body.scrollTop || document.documentElement.scrollTop || 0;
+    // This will make sure sidebar height does not exceed window's height
+    // Useful for small device
+    $scope.windowHeight = $window.innerHeight > 590;
+    $scope.$digest();
+  };
+});
 
 oppiaGithubPages.run(['$location', '$rootScope', function($location, $rootScope) {
   $rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
