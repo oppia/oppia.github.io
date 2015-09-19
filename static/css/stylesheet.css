@@ -351,15 +351,11 @@ Full-Width Styles
 
 .outer {
   width: 100%;
-  /*for small screen div should go beyond screen size 
-    to enable horizontal scrolling min-width=(container width+padding)*/
-  min-width: 1092px;
 }
 
 .inner {
   position: relative;
   /*max-width should match image max-width*/
-  max-width: 900px;
   padding: 20px 10px;
   margin: 0 auto;
 }
@@ -385,6 +381,7 @@ Full-Width Styles
 
 #header_wrap .inner {
   padding: 50px 10px 30px 10px;
+  width:67%;
 }
 
 #project_title {
@@ -460,12 +457,12 @@ Full-Width Styles
   padding-bottom: 20px;
   padding-left: 10px;
   position: relative;
-  width: 900px;
+  width:67%;
 }
 
 .row:before,
 .row:after {
-  content: " ";
+  content: "";
   display: table;
   clear: both;
 }
@@ -476,11 +473,11 @@ Full-Width Styles
 }
 
 .sidebar_wrapper {
-  width: 260px;
+  width: 29%;
 }
 
 .view-content {
-  width: 640px;
+  width: 71%;
   float: right;
 }
 
@@ -530,6 +527,41 @@ Small Device Styles
 
 @media screen and (max-width: 640px) {
   img {
-    width: 640px;
+    width: 100%;
+  }
+}
+
+/* SMARTPHONES PORTRAIT */
+@media only screen and (max-width : 600px) {
+
+  .sidebar_wrapper {
+    display:none !important;
+  }
+  .view-content {
+    width: 100%;
+    float: left;
+  }
+
+}
+
+/* SMARTPHONES LANDSCAPE */
+@media only screen and (max-width : 799px) {
+  .main_content{
+    width:100%;
+  }
+
+  #header_wrap .inner{
+    width:100%;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-width : 800px) and (max-width : 1024px) {
+  .main_content{
+    width:90%;
+  }
+
+  #header_wrap .inner{
+    width:90%;
   }
 }
