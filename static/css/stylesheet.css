@@ -355,7 +355,6 @@ Full-Width Styles
 
 .inner {
   position: relative;
-  /*max-width should match image max-width*/
   padding: 20px 10px;
   margin: 0 auto;
 }
