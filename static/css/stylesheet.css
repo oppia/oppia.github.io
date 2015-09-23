@@ -202,6 +202,7 @@ a {
   -o-transition: text-shadow 0.5s ease;
   -ms-transition: color 0.5s ease;
   -ms-transition: text-shadow 0.5s ease;
+  cursor: pointer;
 }
 
 a:hover,
@@ -220,20 +221,6 @@ em {
 
 strong {
   font-weight: bold;
-}
-
-img {
-  position: relative;
-  margin: 0 auto;
-  max-width: 739px;
-  padding: 5px;
-  margin: 10px 0 10px 0;
-  border: 1px solid #ebebeb;
-  box-shadow: 0 0 5px #ebebeb;
-  -webkit-box-shadow: 0 0 5px #ebebeb;
-  -moz-box-shadow: 0 0 5px #ebebeb;
-  -o-box-shadow: 0 0 5px #ebebeb;
-  -ms-box-shadow: 0 0 5px #ebebeb;
 }
 
 p img {
@@ -344,6 +331,14 @@ form {
   padding: 20px;
 }
 
+#hamburger-menu {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 29px;
+  left: 10px;
+  display: none;
+}
 
 /*******************************************************************************
 Full-Width Styles
@@ -379,7 +374,7 @@ Full-Width Styles
 }
 
 #header_wrap .inner {
-  padding: 50px 10px 30px 10px;
+  padding: 20px 0;
   width:67%;
 }
 
@@ -388,6 +383,7 @@ Full-Width Styles
   color: #fff;
   font-size: 42px;
   font-weight: 700;
+  padding-left: 10px;
 }
 
 #project_title > a:hover,
@@ -403,6 +399,7 @@ Full-Width Styles
   font-size: 24px;
   font-weight: 300;
   background: none;
+  padding-left: 10px;
 }
 
 #downloads {
@@ -454,7 +451,6 @@ Full-Width Styles
   clear: both;
   margin: 0 auto;
   padding-bottom: 20px;
-  padding-left: 10px;
   position: relative;
   width:67%;
 }
@@ -480,18 +476,30 @@ Full-Width Styles
   float: right;
 }
 .video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    padding-top: 35px;
-    height: 0;
-    overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
 }
 .video-container iframe {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#page-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  background-color: black;
+  z-index: 11;
+  opacity: 0.8;
 }
 
 /*******************************************************************************
@@ -536,24 +544,72 @@ Small Device Styles
 
 
 /*reduce the size of the image for small screen devices*/
-
 @media screen and (max-width: 640px) {
   img {
     width: 100%;
   }
 }
 
+/* SMARTPHONES POTRAIT AND LANDSCAPE */
+@media only screen and (max-width: 799px) {
+  #page-sidebar {
+    position: fixed;
+    z-index: 12;
+    top: 0;
+    width: 70%;
+    background-color: white;
+    height: 100%;
+    overflow-y: scroll;
+    display: block;
+    -webkit-transition: -webkit-transform 0.25s; /* Safari */
+    transition: transform 0.25s;
+    -webkit-transform: translate(-100%, 0);
+    transform: translate(-100%, 0);
+  }
+
+  #hamburger-menu {
+    display: block;
+  }
+
+
+  #project_title {
+    font-size: 28px;
+    padding-left: 40px;
+  }
+
+  #project_tagline {
+    font-size: 20px;
+    padding-left: 40px;
+  }
+
+  #header_wrap {
+    position: fixed;
+    display: inline-block;
+    z-index: 1;
+    left: 0;
+    right: 0;
+  }
+
+  #sidebar > .primary {
+    padding-left: 20px;
+    overflow: scroll;
+  }
+
+  .main_content {
+    padding-top: 130px;
+  }
+}
+
 /* SMARTPHONES PORTRAIT */
 @media only screen and (max-width : 600px) {
-
   .sidebar_wrapper {
-    display:none !important;
+    display:none;
   }
+
   .view-content {
     width: 100%;
     float: left;
   }
-
 }
 
 /* SMARTPHONES LANDSCAPE */
