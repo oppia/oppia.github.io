@@ -99,19 +99,19 @@ oppiaGithubPages.controller('sidebarCtrl', function($window, $scope) {
   };
 
   $scope.showSideBar= function() {
-    document.getElementById("page-sidebar").style.transform = "translate(0px, 0px)";
-    document.getElementById("page-sidebar").style.webkitTransform = "translate(0px, 0px)";
-    document.getElementById("page-overlay").style.display = "block";
+    document.getElementById("page_sidebar").style.transform = "translate(0px, 0px)";
+    document.getElementById("page_sidebar").style.webkitTransform = "translate(0px, 0px)";
+    document.getElementById("page_overlay").style.display = "block";
 
     // Register click events for the menu items and the overlay
     document.getElementById("sidebar-menulist").addEventListener("click", $scope.hideSideBar, false);
-    document.getElementById("page-overlay").addEventListener("click", $scope.hideSideBar, false);
+    document.getElementById("page_overlay").addEventListener("click", $scope.hideSideBar, false);
   }
 
   $scope.hideSideBar = function() {
-     document.getElementById("page-sidebar").style.webkitTransform = "translate(-100%, 0)";
-    document.getElementById("page-sidebar").style.transform = "translate(-100%, 0)";
-    document.getElementById("page-overlay").style.display = "none";
+    document.getElementById("page_sidebar").style.webkitTransform = "translate(-100%, 0)";
+    document.getElementById("page_sidebar").style.transform = "translate(-100%, 0)";
+    document.getElementById("page_overlay").style.display = "none";
   };
 
 });

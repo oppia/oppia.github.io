@@ -490,7 +490,7 @@ Full-Width Styles
   height: 100%;
 }
 
-#page-overlay {
+#page_overlay {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -550,9 +550,9 @@ Small Device Styles
   }
 }
 
-/* SMARTPHONES POTRAIT AND LANDSCAPE */
+/* SMARTPHONES PORTRAIT AND LANDSCAPE */
 @media only screen and (max-width: 799px) {
-  #page-sidebar {
+  #page_sidebar {
     position: fixed;
     z-index: 12;
     top: 0;
