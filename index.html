@@ -31,7 +31,13 @@
       <section id="main_content_wrap">
         <!--A container to make a grid with a fixed column-->
         <main class="row main_content">
+          <!-- Side menu for mobile devices. Toggled by the hamburger -->
           <div class="column sidebar_wrapper" id="page_sidebar" ng-controller="sidebarCtrl">
+            <div ng-include="'pages/sidebar.html'"></div>
+          </div>
+
+          <!-- Side menu for desktop and ipads. Always visible -->
+          <div class="column sidebar_wrapper" ng-controller="sidebarCtrl">
             <div ng-include="'pages/sidebar.html'"></div>
           </div>
           <!-- Content will be injected here. -->

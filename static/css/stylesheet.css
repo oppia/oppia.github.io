@@ -598,17 +598,17 @@ Small Device Styles
   .main_content {
     padding-top: 130px;
   }
+
+  .view-content {
+    width: 100%;
+    float: left;
+  }
 }
 
 /* SMARTPHONES PORTRAIT */
 @media only screen and (max-width : 600px) {
   .sidebar_wrapper {
     display:none;
-  }
-
-  .view-content {
-    width: 100%;
-    float: left;
   }
 }
 
@@ -631,5 +631,12 @@ Small Device Styles
 
   #header_wrap .inner{
     width:90%;
+  }
+}
+
+
+@media only screen and (min-width: 800px) {
+  #page_sidebar{
+    display: none;
   }
 }
