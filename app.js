@@ -83,9 +83,38 @@ oppiaGithubPages.config(['$routeProvider', '$locationProvider', function($routeP
     .otherwise({
       redirectTo: '/'
     });
-     //Use the HTML5 History API to prettify URL (by removing #).
-     $locationProvider.html5Mode(true);
+  //Use the HTML5 History API to prettify URL (by removing #).
+  $locationProvider.html5Mode(true);
 }]);
+
+oppiaGithubPages.controller('sidebarCtrl', function($window, $scope) {
+  $scope.scrollPosition = 0;
+
+  $window.onscroll = function() {
+    $scope.scrollPosition = document.body.scrollTop || document.documentElement.scrollTop || 0;
+    // This will make sure sidebar height does not exceed window's height
+    // Useful for small device
+    $scope.windowHeight = $window.innerHeight > 590;
+    $scope.$digest();
+  };
+
+  $scope.showSideBar= function() {
+    document.getElementById("mobile_page_sidebar").style.transform = "translate(0px, 0px)";
+    document.getElementById("mobile_page_sidebar").style.webkitTransform = "translate(0px, 0px)";
+    document.getElementById("page_overlay").style.display = "block";
+
+    // Register click events for the menu items and the overlay
+    document.getElementById("sidebar-menulist").addEventListener("click", $scope.hideSideBar, false);
+    document.getElementById("page_overlay").addEventListener("click", $scope.hideSideBar, false);
+  }
+
+  $scope.hideSideBar = function() {
+    document.getElementById("mobile_page_sidebar").style.webkitTransform = "translate(-100%, 0)";
+    document.getElementById("mobile_page_sidebar").style.transform = "translate(-100%, 0)";
+    document.getElementById("page_overlay").style.display = "none";
+  };
+
+});
 
 oppiaGithubPages.run(['$location', '$rootScope', function($location, $rootScope) {
   $rootScope.$on('$routeChangeSuccess', function(event, current, previous) {
