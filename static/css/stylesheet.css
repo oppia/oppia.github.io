@@ -503,7 +503,7 @@ Full-Width Styles
 }
 
 #sidebar > .primary::-webkit-scrollbar { 
-    display: none; 
+  display: none; 
 }
 
 /*******************************************************************************

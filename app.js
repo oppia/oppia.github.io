@@ -99,7 +99,6 @@ oppiaGithubPages.controller('sidebarCtrl', function($window, $scope) {
   };
 
   $scope.showSideBar= function() {
-    document.getElementById("mobile_page_sidebar").style.visibility = "visible";
     document.getElementById("mobile_page_sidebar").style.transform = "translate(0px, 0px)";
     document.getElementById("mobile_page_sidebar").style.webkitTransform = "translate(0px, 0px)";
     document.getElementById("page_overlay").style.display = "block";
@@ -113,7 +112,6 @@ oppiaGithubPages.controller('sidebarCtrl', function($window, $scope) {
     document.getElementById("mobile_page_sidebar").style.webkitTransform = "translate(-100%, 0)";
     document.getElementById("mobile_page_sidebar").style.transform = "translate(-100%, 0)";
     document.getElementById("page_overlay").style.display = "none";
-    document.getElementById("mobile_page_sidebar").style.visibility = "hidden";
   };
 
 });
