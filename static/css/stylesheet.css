@@ -552,7 +552,7 @@ Small Device Styles
 
 /* SMARTPHONES PORTRAIT AND LANDSCAPE */
 @media only screen and (max-width: 799px) {
-  #page_sidebar {
+  #mobile_page_sidebar {
     position: fixed;
     z-index: 12;
     top: 0;
@@ -621,6 +621,10 @@ Small Device Styles
   #header_wrap .inner{
     width:100%;
   }
+
+  #desktop_page_sidebar{
+    display: none;
+  }
 }
 
 /* iPads (portrait and landscape) ----------- */
@@ -636,7 +640,7 @@ Small Device Styles
 
 
 @media only screen and (min-width: 800px) {
-  #page_sidebar{
+  #mobile_page_sidebar{
     display: none;
   }
 }
