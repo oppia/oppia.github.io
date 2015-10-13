@@ -14,7 +14,7 @@
 
 var oppiaGithubPages = angular.module('oppiaGithubPages', ['ngRoute']);
 
-oppiaGithubPages.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+oppiaGithubPages.config(['$routeProvider', function($routeProvider) {
   $routeProvider
     .when('/', {
       templateUrl: 'pages/home.html',
@@ -83,8 +83,6 @@ oppiaGithubPages.config(['$routeProvider', '$locationProvider', function($routeP
     .otherwise({
       redirectTo: '/'
     });
-  //Use the HTML5 History API to prettify URL (by removing #).
-  $locationProvider.html5Mode(true);
 }]);
 
 oppiaGithubPages.controller('sidebarCtrl', function($window, $scope) {
