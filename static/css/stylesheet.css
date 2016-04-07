@@ -160,11 +160,9 @@ h1 {
 }
 
 h2 {
-  padding-bottom: 0px;
+  padding-bottom: 0;
   margin-bottom: 20px;
   font-size: 32px;
-  /*background: url('../images/bg_hr.png') repeat-x bottom;*/
-  /* Avoid using images so the page could load much faster */
   border-bottom: 2px dotted #CCCCCC;
 }
 
