@@ -32,7 +32,7 @@ oppiaGithubPages.config(['$routeProvider', function($routeProvider) {
       templateUrl: 'pages/KeyConceptsInOppia.html',
       projectTag: 'Key concepts in Oppia'
     })
-    .when('/TheExplorationGallery', {
+    .when('/TheExplorationLibrary', {
       templateUrl: 'pages/TheExplorationLibrary.html',
       projectTag: 'The Exploration Library'
     })
