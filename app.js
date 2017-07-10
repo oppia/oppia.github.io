@@ -68,6 +68,10 @@ oppiaGithubPages.config(['$routeProvider', function($routeProvider) {
       templateUrl: 'pages/DownloadingAnExploration.html',
       projectTag: 'Downloading an exploration'
     })
+    .when('/LearnerDashboard', {
+      templateUrl: 'pages/LearnerDashboard.html',
+      projectTag: 'Learner Dashboard'
+    })
     .when('/Parameters', {
       templateUrl: 'pages/Parameters.html',
       projectTag: 'Parameters'
