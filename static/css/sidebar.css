@@ -37,9 +37,9 @@
 .sidebar_fixed {
   height: 100%;
   margin: 0;
+  overflow: scroll;
+  padding-bottom: 20px;
   padding-top: 0 !important;
   position: fixed;
   top: 0;
-  overflow: scroll;
-  padding-bottom: 20px;
 }
