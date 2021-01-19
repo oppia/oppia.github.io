@@ -8,7 +8,7 @@ Angular application.
 Fork and clone this repo, then run
 
 ```
-   python -m SimpleHTTPServer 8181
+   python -m http.server 8181
 ```
 
 Then navigate to `localhost:8181` in a browser.
