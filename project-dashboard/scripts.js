@@ -1,9 +1,10 @@
 (async function () {
+  const PAT = '';
   const graph = graphql('https://api.github.com/graphql', {
     method: 'POST',
     asJSON: true,
     headers: {
-      'Authorization': 'bearer 7329b9bb56f49b69df5e3e1584be9d8bae847fa7'
+      'Authorization': `bearer ${PAT}`
     },
   });
 
