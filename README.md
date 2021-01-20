@@ -14,7 +14,6 @@ Fork and clone this repo, then run
 
 or
 
-
 **Python 3:**
 ```
    python -m http.server 8181
