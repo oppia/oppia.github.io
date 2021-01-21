@@ -1,0 +1,36 @@
+/* Authentication Prompt */
+#authenticate {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+  top: 0;
+  pointer-events: none;
+}
+#authenticate.show {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 100;
+}
+#authenticate form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}
+#authenticate form input {
+  padding: 10px;
+  width: 50%;
+  margin-right: 10px;
+}
+#authenticate form ol { margin-top: 30px; }
+
+/* Main element */
+main { transition: filter 1s ease-in-out; }
+main.blur { filter: blur(5px); }
