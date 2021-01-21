@@ -1,4 +1,7 @@
-// TODO(BenHenning): Add local storage caching support for data.
+// TODO(BenHenning): Add local storage caching support for data. Note
+// https://stackoverflow.com/a/56150320 for stringifying maps. Also, consider
+// adding a version so that newer versions of the dashboard force a refresh of
+// the cache.
 
 class DataLoader {
   graphqlFetcher;
