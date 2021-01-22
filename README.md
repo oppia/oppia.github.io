@@ -21,7 +21,7 @@ or
 
 Then navigate to `localhost:8181` in a browser.
 
-### Project Dashboard
+### Oppia Android Project Dashboard
 
 The Oppia Project Dashboard uses the web crypto API, which requires a TLS connection.
 To start an HTTPS simple server with a generated self-signed certificate, execute:
