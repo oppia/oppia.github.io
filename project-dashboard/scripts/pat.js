@@ -1,34 +1,42 @@
+/**
+ * Methods for securely processing and storing GitHub
+ * Personal Access Tokens (PATs).
+ * 
+ * @method
+ */
 import { getKey, setKey } from './db.js';
 
 /**
- * Get Personal Access Token from Local Storage
+ * Get Personal Access Token from Local Storage.
+ * 
  * @returns {string}
  */
-const getPAT = async () => {
+const getPat = async () => {
   let ciphertext = localStorage.getItem('PAT');
   if (!ciphertext) throw new Error('No PAT currently stored in local storage');
   
-  let iv = localStorage.getItem('iv');
-  if (!iv) throw new Error('No IV currently stored in local storage');
+  let initVector = localStorage.getItem('initVector');
+  if (!initVector) throw new Error('No IV currently stored in local storage');
 
   // Ciphertext and IV were stored as strings in local storage
   // Split by comma to convert them back into Uint8Arrays
   ciphertext = Uint8Array.from(ciphertext.split(','));
-  iv = Uint8Array.from(iv.split(','));
+  initVector = Uint8Array.from(initVector.split(','));
 
   // Get the symmetric key and decrypt the ciphertext
   let { key } = await getKey('pat_key');
-  let pat = await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext);
+  let pat = await crypto.subtle.decrypt({ name: 'AES-GCM', iv: initVector }, key, ciphertext);
 
   // Convert plaintext data into a string
   return (new TextDecoder()).decode(pat);
 };
 
 /**
- * Set Personal Access Token to Local Storage
- * @param {string} pat - The Personal Access Token entered by user
+ * Set Personal Access Token to Local Storage.
+ * 
+ * @param {string} pat - The Personal Access Token entered by user.
  */
-const setPAT = async (pat) => {
+const setPat = async (pat) => {
   // Get encryption key
   let key = await getKey('pat_key');
 
@@ -50,14 +58,14 @@ const setPAT = async (pat) => {
   let plaintext = encoder.encode(pat);
 
   // Generate initialization vector
-  let iv = crypto.getRandomValues(new Uint8Array(12));
+  let initVector = crypto.getRandomValues(new Uint8Array(12));
 
   // Encrypt plaintext
-  let ciphertext = await crypto.subtle.encrypt({ name: 'AES-GCM', iv }, key, plaintext);
+  let ciphertext = await crypto.subtle.encrypt({ name: 'AES-GCM', iv: initVector }, key, plaintext);
 
   // Save ciphertext and IV to local storage as strings
   localStorage.setItem('PAT', new Uint8Array(ciphertext).toString()); // ciphertext is of type buffer
-  localStorage.setItem('iv', iv.toString());
+  localStorage.setItem('initVector', initVector.toString());
 };
 
-export { getPAT, setPAT };
+export { getPat, setPat };

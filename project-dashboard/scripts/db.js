@@ -1,5 +1,7 @@
 /**
- * An abstraction layer for IndexedDB
+ * An abstraction layer for IndexedDB.
+ * 
+ * @module
  */
 
 const name = 'OppiaProjectDashboard';
@@ -7,7 +9,8 @@ const version = 1; // long long; incrementing fires onupgradeneeded event
 let db = null;
 
 /**
- * Open IndexedDB
+ * Open IndexedDB.
+ * 
  * @returns {boolean}
  */
 const open = async () => {
@@ -40,7 +43,8 @@ const open = async () => {
 };
 
 /**
- * Close IndexedDB
+ * Close IndexedDB.
+ * 
  * @returns {boolean}
  */
 const close = async () => {
@@ -52,8 +56,9 @@ const close = async () => {
 };
 
 /**
- * Write a key into the keystore
- * @param {string} name - Name of the key to store (must be unique)
+ * Write a key into the keystore.
+ * 
+ * @param {string} name - Name of the key to store (must be unique).
  * @param {CryptoKey} key
  * @returns {boolean}
  */
@@ -67,7 +72,8 @@ const setKey = async (name, key) => {
 };
 
 /**
- * Get a key from the keystore
+ * Get a key from the keystore.
+ * 
  * @param {string} name
  * @returns {CryptoKey}
  */
@@ -86,6 +92,6 @@ const getKey = async (name) => {
   return key;
 };
 
-// TODO: Write getters and setters for datastore
+// TODO(55): Write getters and setters for datastore
 
 export { open, close, setKey, getKey };

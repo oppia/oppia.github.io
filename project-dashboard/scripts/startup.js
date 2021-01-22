@@ -1,5 +1,5 @@
 import { open } from './db.js';
-import { getPAT, setPAT } from './pat.js';
+import { getPat, setPat } from './pat.js';
 import queryData from './graphql.js';
 
 // Open Database
@@ -13,15 +13,15 @@ if (!localStorage.getItem('PAT')) {
   prompt.classList.add('show');
   main.classList.add('blur');
 
-  const pat_input = document.querySelector('#authenticate input');
+  const patInput = document.querySelector('#authenticate input');
 
-  pat_input.addEventListener('input', () => {
-    pat_input.setCustomValidity(''); // reset message
-    pat_input.checkValidity();
+  patInput.addEventListener('input', () => {
+    patInput.setCustomValidity(''); // reset message
+    patInput.checkValidity();
   });
 
-  pat_input.addEventListener('invalid', () => {
-    pat_input.setCustomValidity('A GitHub Personal Access token is a 40 character hexadecimal string');
+  patInput.addEventListener('invalid', () => {
+    patInput.setCustomValidity('A GitHub Personal Access token is a 40 character hexadecimal string');
   });
 
   // Handle form submission
@@ -29,10 +29,10 @@ if (!localStorage.getItem('PAT')) {
     event.preventDefault();
     event.stopPropagation();
 
-    await setPAT(pat_input.value);
+    await setPat(patInput.value);
 
     // Send graphql query
-    queryData(getPAT());
+    queryData(getPat());
 
     // Hide prompt
     prompt.classList.remove('show');
@@ -40,5 +40,5 @@ if (!localStorage.getItem('PAT')) {
   });
 } else {
   // Otherwise send graphql query
-  queryData(getPAT());
+  queryData(getPat());
 }
