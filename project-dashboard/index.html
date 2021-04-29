@@ -4,9 +4,28 @@
     <meta charset="utf-8" />
     <title>Project Dashboard</title>
     <script src="https://cdn.jsdelivr.net/gh/f/graphql.js@0.6.7/graphql.min.js" integrity="sha256-Zo7tOMz6K/oPU5ch0Mtpp0LRQCUVX0HvyBd3gj3rc7g=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../static/css/stylesheet.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Project Dashboard</h1>
-    <script src="scripts.js"></script>
+    <section id="authenticate">
+      <h1>Authenticate with Github</h1>
+      <p>In order to use the Oppia Project Dashboard, you need to provide a personal access token.</p>
+      <form autocomplete="off">
+        <input type="password" placeholder="Personal Access Token" pattern="[a-f0-9]{40}" minlength="40" maxlength="40" autofocus required autocomplete="off" />
+        <button type="submit">Login</button>
+      </form>
+      <ol>
+        <li>Navigate to <a href="https://github.com/settings/tokens" target="_blank">https://github.com/settings/tokens</a> and login if necessary.</li>
+        <li>Click "Generate new token"</li>
+        <li>You can use "Oppia Project Dashboard" as the note.</li>
+        <li>Select only the "public_repo" checkbox.  Then click Generate Token.</li>
+        <li>Paste the token in the field above and click Login.</li>
+      </ol>
+    </section>
+    <main>
+      <h1>Project Dashboard</h1>
+    </main>
+    <script src="scripts/startup.js" type="module"></script>
   </body>
 </html>
