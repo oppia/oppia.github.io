@@ -1,18 +1,30 @@
-(async function () {
-  const PAT = '';
+/**
+ * Methods for Querying GitHub's GraphQL API.
+ * 
+ * @module
+ */
+
+/**
+ * Query GitHub API via GraphQL.
+ * 
+ * @param {Promise<string>} patPromise - GitHub Personal Access Token.
+ */
+const queryData = async (patPromise) => {
+  const pat = await patPromise;
+
   const graph = graphql('https://api.github.com/graphql', {
     method: 'POST',
     asJSON: true,
     headers: {
-      'Authorization': `bearer ${PAT}`
+      'Authorization': `bearer ${pat}`
     },
   });
 
-  const repo_name = 'test-project-management-data';
-  const repo_owner = 'BenHenning';
+  const repoName = 'test-project-management-data';
+  const repoOwner = 'BenHenning';
 
-  let repository_query = graph(`query($repo_name: String!, $repo_owner: String!, $labels: [String!], $first: Int, $after: String) {
-    repository(name: $repo_name, owner: $repo_owner) {
+  let repositoryQuery = graph(`query($repoName: String!, $repoOwner: String!, $labels: [String!], $first: Int, $after: String) {
+    repository(name: $repoName, owner: $repoOwner) {
       ptis: issues(labels: $labels, first: $first, after: $after) {
         totalCount
         nodes {
@@ -44,8 +56,8 @@
     }
   }`);
 
-  let all_issues_query = graph(`query($repo_name: String!, $repo_owner: String!, $first: Int, $after: String) {
-    repository(name: $repo_name, owner: $repo_owner) {
+  let allIssuesQuery = graph(`query($repoName: String!, $repoOwner: String!, $first: Int, $after: String) {
+    repository(name: $repoName, owner: $repoOwner) {
       all_issues: issues(first: $first, after: $after) {
         totalCount
         nodes {
@@ -62,8 +74,8 @@
     }
   }`);
 
-  let milestones_query = graph(`query($repo_name: String!, $repo_owner: String!, $first: Int, $after: String) {
-    repository(name: $repo_name, owner: $repo_owner) {
+  let milestonesQuery = graph(`query($repoName: String!, $repoOwner: String!, $first: Int, $after: String) {
+    repository(name: $repoName, owner: $repoOwner) {
       milestones(first: $first, after: $after) {
         totalCount
         pageInfo {
@@ -80,24 +92,26 @@
     }
   }`);
 
-  let repositories = await repository_query({
-    repo_name,
-    repo_owner,
+  let repositories = await repositoryQuery({
+    repoName,
+    repoOwner,
     labels: 'Type: PTI',
     first: 100,
   });
 
-  let all_issues = await all_issues_query({
-    repo_name,
-    repo_owner,
+  let allIssues = await allIssuesQuery({
+    repoName,
+    repoOwner,
     first: 100,
   });
 
-  let milestones = await milestones_query({
-    repo_name,
-    repo_owner,
+  let milestones = await milestonesQuery({
+    repoName,
+    repoOwner,
     first: 100,
   });
 
-  console.log(repositories, all_issues, milestones);
-})();
+  console.log(repositories, allIssues, milestones);
+};
+
+export default queryData;
