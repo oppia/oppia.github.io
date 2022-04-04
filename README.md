@@ -5,7 +5,7 @@ Angular application.
 
 ## Contributing
 
-Fork and clone this repo to you local machine, then change the directory using
+Fork and clone this repo to your local machine, then change the directory using
 ```
 cd oppia.github.io 
 ```
